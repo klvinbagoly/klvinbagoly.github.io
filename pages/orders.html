@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
     <ul>
         <li>
             <a href="/">Home</a>
@@ -20,5 +54,340 @@
     </ul>
     <h1>Orders</h1>
     <a href="/index.html">Index</a>
+    <form>
+        <fieldset>
+            <legend>Adatok</legend>
+            <div class="form.group">
+                <label for="name">Name</label>
+                <input id="name" type="text" value="Név" name="Name">
+
+            </div>
+            <div class="form.group">
+                <label for="age">Mennyiség</label>
+                <input id="age" type="number" name="amount-input">
+
+            </div>
+            <div class="form-group">
+                Fizetendő:
+                <span class="show-amount">0</span>Ft
+            </div>
+            <button onclick="calcAmount()" type="button" class="btn btn-primary">Ok</button>
+            <br>
+            <label for="email">Email</label>
+            <input id="email" type="email">
+            <br>
+            <label for="password">password</label>
+            <input id="password" type="password">
+            <br>
+            <label for="date">Birthdate</label>
+            <input id="date" type="date">
+
+        </fieldset>
+        <fieldset>
+            <legend>Ckeckboxok</legend>
+            <label for="mail">Hírlevél</label>
+            <input type="checkbox" id="mail" name="mail">
+            <br>
+            <span>Boci:</span>
+            <input id="tarka" type="radio" name="boci" value="tarka" checked>
+            <label for="tarka">Tarka</label>
+            <input id="nemt" type="radio" name="boci" value="nemtarka">
+            <label for="nemt">Nem Tarka</label>
+            <br>
+            Darabszám
+            <select name="db" id="db">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+            </select>
+        </fieldset>
+        <input type="button" value="Kész">
+    </form>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="alert alert-primary" role="alert">
+                    Új verzió elérhető.
+                </div>
+                <div class="alert alert-secondary" role="alert">
+                    A simple secondary alert—check it out!
+                </div>
+                <div class="alert alert-success" role="alert">
+                    Sikeres fizetés!
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    A simple danger alert—check it out!
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    A simple warning alert—check it out!
+                </div>
+                <div class="alert alert-info" role="alert">
+                    A koncert véget ért.
+                </div>
+                <div class="alert alert-light" role="alert">
+                    Jó szórakozást!
+                </div>
+                <div class="alert alert-dark" role="alert">
+                    Roham!!!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <th>#</th>
+                        <th>Surname</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th></th>
+                    </thead>
+                    <tr>
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">Módosítás</button>
+                                <button class="btn btn-danger">Törlés</button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">Módosítás</button>
+                                <button class="btn btn-danger">Törlés</button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="table-success">
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">Módosítás</button>
+                                <button class="btn btn-danger">Törlés</button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">Módosítás</button>
+                                <button class="btn btn-danger">Törlés</button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">Módosítás</button>
+                                <button class="btn btn-danger">Törlés</button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="table-danger">
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">Módosítás</button>
+                                <button class="btn btn-danger">Törlés</button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">Módosítás</button>
+                                <button class="btn btn-danger">Törlés</button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">Módosítás</button>
+                                <button class="btn btn-danger">Törlés</button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">Módosítás</button>
+                                <button class="btn btn-danger">Törlés</button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">Módosítás</button>
+                                <button class="btn btn-danger">Törlés</button>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>55</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn-info btn">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary active">Primary</button>
+                <button type="button" class="btn btn-secondary">Secondary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-link">Link</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <form class="form-horizontal">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                Column One Of Three
+            </div>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
 </body>
+
 </html>

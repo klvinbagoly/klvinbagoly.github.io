@@ -1,0 +1,116 @@
+#meat {
+    font-weight: bold;
+}
+#menu {
+ border: solid;
+ padding: 15px 3%;
+ text-decoration: line-through;
+    color: #000;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    color: rgb(1, 19, 2);
+}
+.button {
+    display: inline-block;
+    margin: 2px;
+    border-radius: 5px;
+    padding: 10px 14%;
+    background-color: salmon;
+    box-shadow: 5px 5px 10px ;
+}
+a.button {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    position: relative;
+    top: 100px;
+}
+.bold {
+    font-weight: bold;
+}
+.blue {
+    background-color: aqua;
+    box-shadow: 2px 2px 5px blue;
+}
+html {
+     background-color: lightgoldenrodyellow;
+}
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 20px;
+    border: 4px;
+    border-top: double ;
+    border-bottom: double;
+    padding: 10px;
+    background-color: rgba(200, 50, 10, 0.5); 
+    box-shadow: 5px 5px 3px chocolate;
+    position: static;
+    top: 50px;
+    right: 50px;
+}
+h2 {
+    margin: 40px 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    position: relative;
+}
+p {
+    margin: 20px;
+    box-shadow: 0 0 5px ;
+}
+p:active {
+position: relative;
+top: 10px;
+left: 10px;
+}
+img {
+    box-shadow: 2px 2px 2px gray;
+}
+img:hover {
+    box-shadow: 5px 5px 5px gray;
+}
+img:active {
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+li .list {
+ 
+    padding: 10%;
+}
+li:hover {
+    background-color: greenyellow;
+}
+#img-1 {
+    position: relative;
+    bottom: 100px; left: 10%;
+}
+#img-2 {
+    position: relative;
+    bottom: 1px; left: 40%;
+}
+#img-3 {
+    position: relative;
+    bottom: 100px; left: 70%;
+}
+li[type="odd"] {
+    margin: 2%;
+    text-decoration: line-through;
+}
+li[type="even"] {
+    margin: 4%;
+}
+.list {
+    display: inline-block ;
+}
+.folder {
+    width: 100px;
+    position: absolute;
+    left: 200px;
+}
