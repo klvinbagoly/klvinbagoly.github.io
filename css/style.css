@@ -62,6 +62,7 @@ h2 {
 }
 p {
     margin: 20px;
+    padding: 20px;
     box-shadow: 0 0 5px ;
 }
 p:active {
@@ -80,10 +81,11 @@ img:active {
     top: 5px;
     left: 5px;
 }
-li .list {
- 
-    padding: 10%;
+.list {
+    margin-left: 100px;
+
 }
+
 li:hover {
     background-color: greenyellow;
 }
@@ -100,7 +102,7 @@ li:hover {
     bottom: 100px; left: 70%;
 }
 li[type="odd"] {
-    margin: 2%;
+    margin: 1em 0 ;
     text-decoration: line-through;
 }
 li[type="even"] {
@@ -112,5 +114,24 @@ li[type="even"] {
 .folder {
     width: 100px;
     position: absolute;
-    left: 200px;
+    left: 400px;
+   
+}
+li {
+    margin: 10px 0
+}
+ol {
+    border: solid 1px rgb(1, 19, 2);
+    padding: 5px 20px 20px 30px; 
+    border-radius: 4px;
+}
+.text {
+ border-bottom: dotted 5px ;
+ border-top: dotted 5px ;
+ margin: 15px 0 5px;
+}
+.offer {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: red;
 }

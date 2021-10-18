@@ -8,14 +8,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="../lib/bootstrap-4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Navbar</a>
+            <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -24,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../about.html">About</a>
@@ -41,7 +40,8 @@
             </div>
         </div>
     </nav>
-    <ul>
+
+    <ul id="names">
         <li>
             <a href="/">Home</a>
         </li>
@@ -53,38 +53,76 @@
         </li>
     </ul>
     <h1>Orders</h1>
-    <a href="/index.html">Index</a>
-    <form>
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Kedves vásárlónk!</strong> 
+        A rendeléshez kérjük töltse ki az űrlapot. 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form class="form-group" id="orderForm">
         <fieldset>
-            <legend>Adatok</legend>
-            <div class="form.group">
-                <label for="name">Name</label>
-                <input id="name" type="text" value="Név" name="Name">
-
-            </div>
-            <div class="form.group">
-                <label for="age">Mennyiség</label>
-                <input id="age" type="number" name="amount-input">
-
-            </div>
+            <legend>Hamburger rendelés</legend>
             <div class="form-group">
-                Fizetendő:
-                <span class="show-amount">0</span>Ft
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-sm-3 col-lg-2"> </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <label for="topInput">Feltét</label>
+                            <select id="topInput" name="topInput" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <button onclick="calcAmount()" type="button" class="btn btn-primary">Ok</button>
-            <br>
-            <label for="email">Email</label>
-            <input id="email" type="email">
-            <br>
-            <label for="password">password</label>
-            <input id="password" type="password">
-            <br>
-            <label for="date">Birthdate</label>
-            <input id="date" type="date">
+            <div class="form-group ">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-sm-3 col-lg-2"> </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <label for="amount">Mennyiség</label>
+                            <input id="amount" type="number" name="amount-input" class="form-control" value="1">
+                            <small class="form-text text-muted">
+                                Minimum 1, maximum 10db.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-3 col-lg-2"> </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="form-group">
+                            Fizetendő:
+                            <span class="show-amount">0</span>Ft
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ok</button>
+                        <br>
+                        <button type="button" onclick="this.style.display='none'">ClicktoRemoveMe!</button>
+                        <div class="form-group">
+
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" type="email" name="email" class="form-control">
+                            <br>
+                            <label for="password">password</label>
+                            <input id="password" type="password" name="password" class="form-control">
+                            <br>
+                            <label for="date">Birthdate</label>
+                            <input id="date" type="date" name="birthdate" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </fieldset>
         <fieldset>
-            <legend>Ckeckboxok</legend>
+            <legend>Checkboxok</legend>
             <label for="mail">Hírlevél</label>
             <input type="checkbox" id="mail" name="mail">
             <br>
@@ -146,157 +184,118 @@
                         <th>Age</th>
                         <th></th>
                     </thead>
-                    <tr>
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">Módosítás</button>
-                                <button class="btn btn-danger">Törlés</button>
+                    <tbody id="userTable">
 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="table-success">
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">Módosítás</button>
-                                <button class="btn btn-danger">Törlés</button>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="table-success">
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">Módosítás</button>
-                                <button class="btn btn-danger">Törlés</button>
+                        <tr class="table-success">
+                            <td>1</td>
+                            <td>Kiss</td>
+                            <td>János</td>
+                            <td>55</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-info btn">Módosítás</button>
+                                    <button class="btn btn-danger">Törlés</button>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="table-active">
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">Módosítás</button>
-                                <button class="btn btn-danger">Törlés</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="table-active">
+                            <td>1</td>
+                            <td>Kiss</td>
+                            <td>János</td>
+                            <td>55</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-info btn">Módosítás</button>
+                                    <button class="btn btn-danger">Törlés</button>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="table-warning">
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">Módosítás</button>
-                                <button class="btn btn-danger">Törlés</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td>1</td>
+                            <td>Kiss</td>
+                            <td>János</td>
+                            <td>55</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-info btn">Módosítás</button>
+                                    <button class="btn btn-danger">Törlés</button>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="table-danger">
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">Módosítás</button>
-                                <button class="btn btn-danger">Törlés</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td>1</td>
+                            <td>Kiss</td>
+                            <td>János</td>
+                            <td>55</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-info btn">Módosítás</button>
+                                    <button class="btn btn-danger">Törlés</button>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="table-info">
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">Módosítás</button>
-                                <button class="btn btn-danger">Törlés</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="table-info">
+                            <td>1</td>
+                            <td>Kiss</td>
+                            <td>János</td>
+                            <td>55</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-info btn">Módosítás</button>
+                                    <button class="btn btn-danger">Törlés</button>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">Módosítás</button>
-                                <button class="btn btn-danger">Törlés</button>
+                                </div>
+                            </td>
+                        </tr>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">Módosítás</button>
-                                <button class="btn btn-danger">Törlés</button>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">Módosítás</button>
-                                <button class="btn btn-danger">Törlés</button>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>55</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn-info btn">
-                                    <i class="fas fa-sync-alt"></i>
-                                </button>
-                                <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        <tr>
+                            <td>1</td>
+                            <td>Kiss</td>
+                            <td>János</td>
+                            <td>55</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-info btn">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                    <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
 
-                            </div>
-                        </td>
-                    </tr>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
+                <h4>Új felhasználó bevitele</h4>
+                <form>
+                    <table class="table form-group">
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" id="newSurname">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" id="newName">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" id="newAge">
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-success" id="saveButton" onclick="getUser()">Mentés</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
             </div>
             <div class="col-2"></div>
         </div>
     </div>
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col">
                 <button type="button" class="btn btn-primary active">Primary</button>
@@ -306,13 +305,13 @@
                 <button type="button" class="btn btn-warning">Warning</button>
                 <button type="button" class="btn btn-info">Info</button>
                 <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-link">Link</button>
                 <button type="button" class="btn btn-dark">Dark</button>
 
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <button type="button" class="btn btn-link">Link</button>
     <div class="container">
         <div class="row">
             <div class="col-4"></div>
@@ -388,6 +387,9 @@
         </div>
     </div>
     <script src="../js/main.js"></script>
+    <script src="../js/user.js"></script>
+    <!-- <script src="../js/scope.js"></script> -->
+
 </body>
 
 </html>

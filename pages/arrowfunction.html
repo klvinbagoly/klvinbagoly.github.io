@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html lang="hu">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Arrow Function Example</title>
+    </head>
+     <body>
+        <ul id="price-list">
+            <li>TV</li>
+            <li data-company="Dell">Server</li>
+            <li data-price="11.012,12">TV</li>
+            <li data-price="23.243,55">Server</li>
+            <li data-price="4.543,29">TV</li>
+            <li data-price="230.323,32">Server</li>
+            <li data-price="48.344,30">Server</li>
+        </ul>
+    </body>
+    <script>
+        const serverPrice = Array.from(
+            document.querySelectorAll('#price-list li[data-price]'))
+             .filter(item => item.textContent.includes('Server'))
+             .map(item => parseFloat(item.dataset.price.replace('.', '')
+             .replace(',', '.')))             
+            .reduce((total, item) => total + item);         
+        console.log(serverPrice);
+    </script>
+</html>
