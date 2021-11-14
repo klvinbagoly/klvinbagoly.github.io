@@ -1,0 +1,97 @@
+.openerButton {
+    position: relative;
+    left: 50vw;
+    border: solid 2px #8a12a6;
+    padding: 5px 5px;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+body {
+    margin-top: 50px;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(55, 55, 55, 0.2);
+    transition: background-color 0.3s;
+}
+
+.closerButton, .modal__button {
+    float: right;
+}
+
+@media only screen and (min-width:560px) {
+    .modal, .modal-visible {
+        width: 50vw;
+        align-items: center;
+        margin: auto;
+    }
+}
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.overlay {
+    position: fixed;
+    left: 0;
+    top:0;
+    height: 0vh;  /*Roló effekt, vissza lehet állítani 100-ra, ha nem kell*/
+    width:100vw;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    
+}
+
+.overlay-visible{
+    background-color: rgba(0, 0, 0, 0.7);
+    display: block;
+    opacity:1;
+    height: 100vh;
+    width:100vw;
+    z-index: 2;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+}
+.modal {
+    opacity: 0;
+    transform: translateY(-100px);
+    margin:10px auto;
+    padding: 20px 20px;
+    transition: all 0.5s ease;
+    background-color: #fff;
+}
+
+.modal-visible {
+    opacity: 1;
+    margin:auto auto;
+    padding: 20px 20px;
+    transition: all 0.5s ease;
+    background-color: #fff;
+    position: relative;
+    z-index: 3;
+}
+
+.footer{
+    height: auto;
+}
+.closerButton {
+    font-size: 2rem;
+    margin: 5px;
+}
+
+.modal__button--okay {
+    background-color: #12ae12;
+}
+
+.modal__button--cancel {
+    background-color: #ff1212;
+}
+
+.modal__button {
+    font-size: 1.2rem;
+    margin: 5px 5px;
+    border: none;
+    padding: 10px 10px;
+    color: #fff;
+}
