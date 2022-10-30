@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/main.js" defer></script>
+  <script src="https://kit.fontawesome.com/7aeb4aecb0.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AppArt</title>
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to AppArt!</h1>
+    <p>Here is your canvas.</p>
+  </header>
+  <main>
+    <canvas id="myCanvas"></canvas>
+    <canvas id="preview"></canvas>
+    <div class="tools">
+      <div class="tool-group">
+        <input type="color" name="brushColor" id="brushColor">
+        <label for="brushColor">Please choose a color.</label>
+      </div>
+      <div class="tool-group">
+        <div class="width-indicator"></div>
+        <input type="range" min="1" max="50" value="5" name="brushWidth" id="brushWidth">
+        <label for="brushWidth">Please choose the width of your brush.</label>
+      </div>
+    </div>
+    <div class="tools">
+      <div class="tool-group">
+        <label for="fillMode">
+          <input type="checkbox" name="fillMode" id="fillMode">
+          Fill encircled shape
+        </label>
+      </div>
+    </div>
+    <div class="tools">
+      <div class="tool-group">
+        <input type="range" name="globalAlpha" id="globalAlpha" max="1" step="any" value="1">
+        <label for="globalAlpha">Transparency/opacity of color</label>
+      </div>
+      <div class="tool-group">
+        <p>Shape of brush:</p>
+        <label for="round">
+          <input type="radio" name="brushShape" id="round" value="round" checked>
+          Round
+        </label>
+        <label for="square">
+          <input type="radio" name="brushShape" id="square" value="square">
+          Square
+        </label>
+      </div>
+    </div>
+    <p>Draw mode:</p>
+    <div class="tools">
+      <div class="tool-group">
+        <label for="drawFree">
+          <input checked type="radio" name="drawMode" id="drawFree" value="drawFree">
+          Draw freely
+        </label>
+      </div>
+      <div class="tool-group">
+        <label for="straightLine">
+          <input type="radio" name="drawMode" id="straightLine" value="straightLine">
+          Draw straight line
+        </label>
+      </div>
+      <div class="tool-group">
+        <label for="rect">
+          <input type="radio" name="drawMode" id="rect" value="rect">
+          Draw rectangle
+        </label>
+      </div>
+      <div class="tool-group">
+        <label for="circle">
+          <input type="radio" name="drawMode" id="circle" value="circle">
+          Draw circle (from edge)
+        </label>
+      </div>
+      <div class="tool-group">
+        <label for="circleCenter">
+          <input type="radio" name="drawMode" id="circleCenter" value="circleCenter">
+          Draw circle (from center point)
+        </label>
+      </div>
+    </div>
+    <div class="tools">
+      <div class="tool-group">
+        <button class="delete-btn">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+        <span class="delete-text">Delete your work</span>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
