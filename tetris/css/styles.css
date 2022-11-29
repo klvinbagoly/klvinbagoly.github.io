@@ -152,6 +152,10 @@ button:not(:disabled):hover {
   .controls button {
     font-size: 3rem;
   }
+
+  .game {
+    height: 75vh;
+  }
 }
 
 .count {
