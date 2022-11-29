@@ -93,6 +93,9 @@ class Piece {
     const cornerY = Math.min(...this.positions.map(pos => pos[1]))
     const corner = [cornerX, cornerY]
     this.positions = this.#getPositions(this.#shape, corner[0] - 1, corner[1] - 1)
+    if (this.positions.some(pos => pos[0] > 10)) {
+      this.moveLeft()
+    }
   }
 }
 
