@@ -54,13 +54,13 @@
     </ul>
     <h1>Orders</h1>
     <div class="alert alert-info alert-dismissible fade show" role="alert">
-        <strong>Kedves vásárlónk!</strong> 
-        A rendeléshez kérjük töltse ki az űrlapot. 
+        <strong>Kedves vásárlónk!</strong>
+        A rendeléshez kérjük töltse ki az űrlapot.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <form class="form-group" id="orderForm">
+    <form class="form-group" id="orderForm" method="get" enctype="text/plain">
         <fieldset>
             <legend>Hamburger rendelés</legend>
             <div class="form-group">
@@ -92,6 +92,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="file">Képek feltöltése:</label>
+                <input type="file" name="pictures" id="file" multiple accept="image/*">
+                <button class="btn btn-success">Mehet</button>
             </div>
             <div class="container">
 
@@ -286,7 +291,8 @@
                                 <input type="text" class="form-control" id="newAge">
                             </td>
                             <td>
-                                <button type="button" class="btn btn-success" id="saveButton" onclick="getUser()">Mentés</button>
+                                <button type="button" class="btn btn-success" id="saveButton"
+                                    onclick="getUser()">Mentés</button>
                             </td>
                         </tr>
                     </table>
