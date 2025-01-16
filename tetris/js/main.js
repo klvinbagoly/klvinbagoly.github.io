@@ -2,9 +2,13 @@ class Piece {
   #shape = [[0]]  // This will be the actual shape.
   #shapes = [
     [[1, 0], [1, 0], [1, 1]],  // L-shape
+    [[1, 1], [1, 0], [1, 0]],
     [[0, 1, 0], [1, 1, 1]],  // T-shape
     [[1, 0], [1, 1]], // 
     [[1, 1], [1, 1]],  // cube
+    [[1, 0], [1, 1], [0, 1]],
+    [[0, 1], [1, 1], [1, 0]],
+
   ]
 
   #getRandomColour() {
